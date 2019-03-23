@@ -15,11 +15,4 @@ public interface OrderRepository
 	List<Order> readOrdersByDeliveryZipAndPlacedAtBetween(
 			String deliveryZip, Date startDate, Date endDate);
 	
-	List<Order> findByDeliveryToAndDeliveryCityAllIgnoresCase(
-			String deliveryTo, String deliveryCity);
-	
-	List<Order> findByDeliveryCityOrderByDeliveryTo(String city);
-	
-	@Query("Order o where o.deliveryCity='Seattle'")
-	List<Order> readOrdersDeliveredInSeattle();
 }
